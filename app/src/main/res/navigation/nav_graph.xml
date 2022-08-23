@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/tasksFragments2">
+    <fragment
+        android:id="@+id/tasksFragments2"
+        android:name="com.codinginflow.tasksMVVMkotlin.ui.tasks.TasksFragments"
+        android:label="Tasks"
+        tools:layout="@layout/fragment_task">
+        <action
+            android:id="@+id/action_tasksFragments2_to_addEditTaskFragment"
+            app:destination="@id/addEditTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditTaskFragment"
+        android:name="com.codinginflow.tasksMVVMkotlin.ui.addedittask.AddEditTaskFragment"
+        android:label="{title}" >
+        <argument
+            android:name="task"
+            app:argType="com.codinginflow.mvvmtodo.data.Task"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+    <dialog
+        android:id="@+id/deleteAllCompleteDialogFragment"
+        android:name="com.codinginflow.tasksMVVMkotlin.ui.deleteallcompleted.DeleteAllCompleteDialogFragment"
+        android:label="DeleteAllCompleteDialogFragment" /><action android:id="@+id/action_global_deleteAllCompleteDialogFragment" app:destination="@id/deleteAllCompleteDialogFragment"/>
+</navigation>
